@@ -16,7 +16,10 @@ import {
 import { addToCart, removeFromCart } from "../store/slices/cartSlice";
 import axios from "axios";
 
-const API = import.meta.env.VITE_API_URL || "http://localhost:5000";
+const API =
+  import.meta.env.VITE_API_URL ||
+  process.env.VITE_API_URL ||
+  "http://localhost:5000";
 
 export default function ProductDetailPage() {
   const { id } = useParams();
