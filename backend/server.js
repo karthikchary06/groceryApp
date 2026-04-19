@@ -7,7 +7,15 @@ dotenv.config();
 
 const app = express();
 
-app.use(cors({ origin: "*" }));
+app.use(
+  cors({
+    origin: [
+      "http://localhost:3000",
+      "https://groceryapp-t1qk.onrender.com", // your vercel URL
+    ],
+    credentials: true,
+  }),
+);
 app.use(express.json());
 
 // DB Connect (optional - works without it for demo)
